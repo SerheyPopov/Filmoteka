@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/297.59f14272.chunk.js","mappings":"+HAOA,UALa,WACT,OACI,yBAAK,QAEZ,C","sources":["Pages/Show.jsx"],"sourcesContent":["\n\nconst Show = () => {\n    return (\n        <div>show</div>\n    )\n}\nexport default Show"],"names":[],"sourceRoot":""}
