@@ -17,7 +17,8 @@ import Loader from '../Loader/Loader';
 
 const MovieCard = card => {
   const imgURL = 'https://image.tmdb.org/t/p/w500';
-  const { poster_path, title, vote_average, overview, genres } = card.card;
+  const { poster_path, title, vote_average, overview, genres, name } =
+    card.card;
 
   return (
     <Container>
@@ -30,7 +31,7 @@ const MovieCard = card => {
           />
         </div>
         <div>
-          <Title>{title}</Title>
+          <Title>{title || name}</Title>
           <Rating>Rating:{vote_average}</Rating>
           <Span>Genres:</Span>
           <GenresList>

@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
 import { GoBack, List, Cast, Review } from './MovieDetails.styled';
 import { MovieInfo } from '../components/Api/Api';
+import { TvInfo } from '../components/Api/Api';
+
 import MovieCard from '../components/MovieCard/MovieCard';
 
 const FilmInfo = () => {
@@ -10,16 +12,24 @@ const FilmInfo = () => {
   const backLinkHref = location.state?.from ?? '/movies';
   const [filmId, setFilmId] = useState('');
   const params = useParams();
+  const path = location.pathname.slice(1, 3);
+
+  const memoized = useCallback(() => {
+    if (path === 'tv') {
+      return TvInfo(params.filmId);
+    }
+    return MovieInfo(params.filmId);
+  }, [path, params]);
 
   useEffect(() => {
     try {
-      MovieInfo(params.filmId).then(response => {
+      memoized().then(response => {
         setFilmId(response);
       });
     } catch (error) {
       console.log(error);
     }
-  }, [params.filmId]);
+  }, [memoized]);
 
   return (
     <div>

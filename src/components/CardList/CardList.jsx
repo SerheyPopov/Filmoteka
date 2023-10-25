@@ -8,12 +8,19 @@ const CardList = searchValue => {
   const imgURL = 'https://image.tmdb.org/t/p/w500';
   const search = searchValue.searchValue;
 
+  const asd = () => {
+    if (location.pathname === '/tv') {
+      return 'tv';
+    }
+    return 'movies';
+  };
+
   return (
     <List>
       {search &&
-        search.map(({ id, poster_path, title }) => (
+        search.map(({ id, poster_path, title, name }) => (
           <Item key={id}>
-            <A to={`/movies/${id}`} state={{ from: location }}>
+            <A to={`/${asd()}/${id}`} state={{ from: location }}>
               <Img
                 src={
                   poster_path
@@ -24,7 +31,7 @@ const CardList = searchValue => {
                 width={300}
               />
               <Container>
-                <P>{title}</P>
+                <P>{title || name}</P>
               </Container>
             </A>
           </Item>

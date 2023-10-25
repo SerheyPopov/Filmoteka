@@ -16,13 +16,16 @@ const Header = () => {
               <Link to="/">Movies</Link>
             </Item>
             <Item>
-              <Link to="/tvshow">TV Shows</Link>
+              <Link to="/tv">TV Shows</Link>
             </Item>
             <Item>
               <Link to="/people">People</Link>
             </Item>
-            <Item>
+            {/* <Item>
               <Link to="/favorite">Favorite</Link>
+            </Item> */}
+            <Item>
+              <Link to="/search">Search Movie?</Link>
             </Item>
           </List>
         </div>

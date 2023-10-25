@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { GetMovies } from '../components/Api/Api';
 import CardList from '../components/CardList/CardList';
-import Searchbar from '../components/SearchBar/SearchBar';
 
 const Home = () => {
-  const [trendMovies, setTrendMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     try {
       GetMovies().then(response => {
-        setTrendMovies(response.results);
+        setMovies(response.results);
       });
     } catch (error) {
       console.log(error);
@@ -19,8 +18,7 @@ const Home = () => {
 
   return (
     <div>
-      <Searchbar/>
-      <CardList searchValue={trendMovies} />
+      <CardList searchValue={movies} />
     </div>
   );
 };

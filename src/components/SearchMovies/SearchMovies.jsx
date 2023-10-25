@@ -2,11 +2,11 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { SearchMovie } from '../components/Api/Api';
-import CardList from '../components/CardList/CardList';
-import Searchbar from '../components/SearchBar/SearchBar';
+import { SearchMovie } from '../../components/Api/Api';
+import CardList from '../CardList/CardList';
+import Searchbar from '../SearchBar/SearchBar';
 
-const Movies = () => {
+const SearchMovies = prop => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [film, setFilm] = useState([]);
   const search = searchParams.get('query');
@@ -32,6 +32,19 @@ const Movies = () => {
       return toast.error('Please, use your keyboard');
     }
     setSearchParams({ query: search.search });
+    try {
+      if (!search) {
+        return;
+      }
+      SearchMovie(search.search).then(response => {
+        if (response.total_results === 0) {
+          return toast.error(`${search} not found`);
+        }
+        setFilm(response.results);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -43,4 +56,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default SearchMovies;

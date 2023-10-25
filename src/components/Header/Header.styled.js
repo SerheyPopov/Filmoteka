@@ -16,5 +16,9 @@ export const Item = styled.li`
 margin-right: 20px;
 `;
 export const Link = styled(NavLink)`
-color:#fff;
+  color: #fff;
+  text-decoration: none;
+  &:hover{
+    color: red;
+  }
 `;
