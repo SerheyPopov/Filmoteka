@@ -7,6 +7,7 @@ export const List = styled.ul`
   gap: 20px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 `;
 
 export const A = styled(Link)`

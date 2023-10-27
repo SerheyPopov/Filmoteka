@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, NavLink } from 'react-router-dom';
 
-import { GoBack } from '../../Pages/MovieDetails.styled';
 import { PersonInfo } from '../../components/Api/Api';
 import PersonFullInfo from '../PersonInfo/PersonInfo';
 
@@ -23,7 +22,7 @@ const Person = () => {
 
   return (
     <div>
-      <GoBack to={backLinkHref}>Go back</GoBack>
+      <NavLink to={backLinkHref}>Go back</NavLink>
       <PersonFullInfo card={filmId} />
     </div>
   );

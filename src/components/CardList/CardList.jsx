@@ -1,7 +1,16 @@
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { List, Item, A, Img, P, Container } from './CardList.styled';
+import {
+  List,
+  Item,
+  A,
+  Img,
+  P,
+  Container,
+  Rating,
+  RatingText,
+} from './CardList.styled';
 
 const CardList = searchValue => {
   const location = useLocation();
@@ -14,11 +23,10 @@ const CardList = searchValue => {
     }
     return 'movies';
   };
-
   return (
     <List>
       {search &&
-        search.map(({ id, poster_path, title, name }) => (
+        search.map(({ id, poster_path, title, name, vote_average }) => (
           <Item key={id}>
             <A to={`/${asd()}/${id}`} state={{ from: location }}>
               <Img
@@ -32,6 +40,9 @@ const CardList = searchValue => {
               />
               <Container>
                 <P>{title || name}</P>
+                <Rating>
+                  <RatingText>{vote_average.toFixed(1)}</RatingText>
+                </Rating>
               </Container>
             </A>
           </Item>

@@ -5,20 +5,25 @@ export const MainContainer = styled.div`
   background-color: #012e4a;
   height: 80px;
   display: flex;
-  margin-bottom: 30px;
-  justify-content: space-around;
+  justify-content: center;
+  position: relative;
   align-items: center;
 `;
+export const LogoCont = styled.div`
+  position: absolute;
+  top: 0;
+  left: 150px;
+`;
 export const List = styled.ul`
-display: flex;
+  display: flex;
 `;
 export const Item = styled.li`
-margin-right: 20px;
+  margin-right: 20px;
 `;
 export const Link = styled(NavLink)`
   color: #fff;
   text-decoration: none;
-  &:hover{
+  &:hover {
     color: red;
   }
 `;

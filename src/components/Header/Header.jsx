@@ -1,15 +1,16 @@
 
-import { MainContainer, List, Link, Item } from './Header.styled';
+import { MainContainer, List, Link, Item, LogoCont } from './Header.styled';
+import Logo from "../../image/Filmoteka.png";
 
 
 const Header = () => {
     return (
       <MainContainer>
-        <div>
-          <p>
-            <Link to="/"> Filmoteka</Link>
-          </p>
-        </div>
+        <LogoCont>
+            <Link to="/">
+            <img src={Logo} alt="logo"  width={300}/>
+            </Link>
+        </LogoCont>
         <div>
           <List>
             <Item>

@@ -7,6 +7,7 @@ export const List = styled.ul`
   gap: 20px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 `;
 
 export const A = styled(Link)`
@@ -48,4 +49,24 @@ export const Container = styled.div`
   align-items: center;
   padding: 15px;
   background-color: #f9f7f7;
+  position: relative;
+`;
+
+export const Rating = styled.div`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #453c41;
+  top: -60px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const RatingText = styled.p`
+  color: #d4dbe2;
+  font-size: x-large;
+  font-weight: 700;
 `;

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin: 30px 0;
 `;
 
 export const SearchForm = styled(Form)`

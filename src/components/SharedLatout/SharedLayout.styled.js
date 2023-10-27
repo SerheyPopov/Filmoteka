@@ -29,5 +29,5 @@ export const Nav = styled.nav`
 `;
 
 export const Main = styled.main`
-  padding: 0 30px;
+  // padding: 0 30px;
 `;
