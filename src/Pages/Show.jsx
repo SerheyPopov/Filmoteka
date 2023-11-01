@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GetAll } from '../components/Api/Api';
+import { GetTv } from '../components/Api/Api';
 import CardList from '../components/CardList/CardList';
 
 const Show = () => {
@@ -7,7 +7,7 @@ const Show = () => {
 
   useEffect(() => {
     try {
-      GetAll().then(response => {
+      GetTv().then(response => {
         setTrendMovies(response.results);
       });
     } catch (error) {

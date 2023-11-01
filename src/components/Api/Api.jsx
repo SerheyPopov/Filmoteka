@@ -4,19 +4,32 @@ const API_KEY = '5f2a66e63fa9a8139a0b7e8b9aba27ca';
 const URL = 'https://api.themoviedb.org/';
 axios.defaults.baseURL = URL;
 
+export const GetAll = async () => {
+  try {
+    const server = await axios.get(
+      `3/trending/all/day?api_key=${API_KEY}&language=en-US`
+    );
+    const data = await server.data;
+    return data.results;
+
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const GetMovies = async () => {
   try {
     const server = await axios.get(
       `3/trending/movie/day?api_key=${API_KEY}&language=en-US`
     );
     const data = await server.data;
-    return data;
+    return data.results;
   } catch (error) {
     console.error(error);
   }
 };
 
-export const GetAll = async () => {
+export const GetTv = async () => {
   try {
     const server = await axios.get(
       `3/trending/tv/day?api_key=${API_KEY}&language=en-US`

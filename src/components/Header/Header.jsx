@@ -14,7 +14,7 @@ const Header = () => {
         <div>
           <List>
             <Item>
-              <Link to="/">Movies</Link>
+              <Link to="/movie">Movies</Link>
             </Item>
             <Item>
               <Link to="/tv">TV Shows</Link>
